@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "preordersgrpc.api";
+
+package preordersgrpc;
+
+service DynaGrpc {
+  rpc FindBasic(AddTextRequest) returns (Preorder);
+}
+
+message FindRequest {
+  string labcode = 1;
+  string ordernumber = 2;
+  string dealernumber = 3;
+}
+
+message Preorder {
+  string labcode = 1;
+  string ordernumber = 2;
+  string dealernumber = 3;
+  string sourcereference = 4;
+}
