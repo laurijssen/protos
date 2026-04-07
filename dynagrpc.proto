@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option csharp_namespace = "dynagrpc.api";
+
+package dynagrpc;
+
+service DynaGrpc {
+  rpc AddText(AddTextRequest) returns (ByteReply);
+  rpc AddImage(AddImageRequest) returns (ByteReply);
+  rpc GetBlankPDF(GetBlankPDFRequest) returns (ByteReply);
+  rpc AddTrimBox(AddTrimBoxRequest) returns (ByteReply);
+}
+
+message AddTrimBoxRequest {
+	bytes pdf = 1;
+	float bleedtop = 2;
+	float bleedbottom = 3;
+	float bleedleft = 4;
+	float bleedspine = 5;
+	bool isphotobook = 6;
+}
+
+message AddTextRequest {
+  bytes pdf = 1;
+  string text = 2;
+  float x = 3;
+  float y = 4;
+  float fontSize = 5;
+  string font = 6;
+}
+
+message AddImageRequest {
+  bytes pdf = 1;
+  bytes image = 2;
+  float x = 3;
+  float y = 4;
+  float w = 5;
+  float h = 6;
+}
+
+message GetBlankPDFRequest {
+	int32 w = 1;
+	int32 h = 2;
+}
+
+message ByteReply {
+  bytes pdf = 1;
+}
