@@ -2,8 +2,6 @@ syntax = "proto3";
 
 option csharp_namespace = "preordersgrpc.api";
 
-// preordersgrpc
-
 package preordersgrpc;
 
 service DynaGrpc {
