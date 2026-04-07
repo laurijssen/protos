@@ -14,9 +14,17 @@ message FindRequest {
   string dealernumber = 3;
 }
 
+message PreorderDetail {
+  int articlenumber = 1;
+  int count = 2;
+  int countordered = 3;
+}
+
 message Preorder {
   string labcode = 1;
   string ordernumber = 2;
   string dealernumber = 3;
   string sourcereference = 4;
+
+  repeated PreorderDetail details = 5;
 }
