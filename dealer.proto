@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "dealer.api";
+
+package preordersgrpc;
+
+service Dealers {
+  rpc FindBasic(FindRequest) returns (Preorder);
+}
+
+message FindRequest {
+  string labcode = 1;
+  string dealernumber = 2;
+}
+
+message Dealer {
+  string labcode = 1;
+  string dealernumber = 2;
+  string address = 3;
+}
