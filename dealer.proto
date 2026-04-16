@@ -2,10 +2,12 @@ syntax = "proto3";
 
 option csharp_namespace = "dealer.api";
 
-package preordersgrpc;
+package dealer;
+
+option go_package = "./;dealer";
 
 service Dealers {
-  rpc FindBasic(FindRequest) returns (Preorder);
+  rpc FindBasic(FindRequest) returns (Dealer);
 }
 
 message FindRequest {
