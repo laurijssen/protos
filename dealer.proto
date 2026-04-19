@@ -1,10 +1,8 @@
 syntax = "proto3";
 
-option csharp_namespace = "dealer.api";
+option csharp_namespace = "tradecube.api";
 
-package dealer;
-
-option go_package = "./;dealer";
+package tradecube;
 
 service Dealers {
   rpc FindBasic(FindRequest) returns (Dealer);
