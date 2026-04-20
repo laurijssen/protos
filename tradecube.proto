@@ -5,7 +5,8 @@ option csharp_namespace = "tradecube.api";
 package tradecube;
 
 service Dealers {
-  rpc FindBasic(FindRequest) returns (Dealer);
+  rpc FindDealer(FindRequest) returns (Dealer);
+  rpc CalculatePrice(CalculatePriceRequest) returns (CalculatePriceResponse);
 }
 
 message FindRequest {
@@ -16,5 +17,16 @@ message FindRequest {
 message Dealer {
   string labcode = 1;
   string dealernumber = 2;
-  string address = 3;
+  string dealerid = 3;
+  string groupid = 4;
+  string makeid = 5;
+}
+
+message CalculatePriceRequest {
+	Dealer dealer = 1;
+	string sourcereference = 2;
+}
+
+message CalculatePriceResponse {
+	float totalprice = 1;
 }
