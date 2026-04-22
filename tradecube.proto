@@ -24,7 +24,7 @@ message Dealer {
 
 message Price {
   string articlenumber = 1;
-  float price = 2;
+  double price = 2;
 }
 
 message CalculatePriceRequest {
@@ -36,6 +36,6 @@ message CalculatePriceResponse {
   repeated Price dealerprices = 1;
   repeated Price consumerprices = 2;
 
-  float totaldealerprice = 3;
-  float totalconsumerprice = 4;
+  double totaldealerprice = 3;
+  double totalconsumerprice = 4;
 }
