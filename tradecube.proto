@@ -33,5 +33,9 @@ message CalculatePriceRequest {
 }
 
 message CalculatePriceResponse {
-  repeated Price prices = 1;
+  repeated Price dealerprices = 1;
+  repeated Price consumerprices = 2;
+
+  float totaldealerprice = 3;
+  float totalconsumerprice = 4;
 }
