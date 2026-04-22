@@ -22,11 +22,16 @@ message Dealer {
   string makeid = 5;
 }
 
+message Price {
+  string articlenumber = 1;
+  float price = 2;
+}
+
 message CalculatePriceRequest {
 	Dealer dealer = 1;
 	string sourcereference = 2;
 }
 
 message CalculatePriceResponse {
-	float totalprice = 1;
+  repeated Price prices = 1;
 }
